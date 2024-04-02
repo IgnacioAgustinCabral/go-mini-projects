@@ -12,7 +12,7 @@ func main() {
 	fmt.Println("Try to guess the number between 1 and 100!")
 	for {
 		var input string
-		fmt.Println("Enter your guess: ")
+		fmt.Print("Enter your guess: ")
 		fmt.Scanln(&input)
 		if containsDecimalPoint(input) || containsSpecialCharacters(input) || containsSpace(input) {
 			fmt.Println("Please enter a whole number. No letters, special characters or floating numbers allowed")
@@ -25,7 +25,7 @@ func main() {
 			fmt.Println("Entered number must be between 1 and 100")
 			continue
 		}
-		
+
 		counter++
 
 		if guessedNumber == randomNumber {
