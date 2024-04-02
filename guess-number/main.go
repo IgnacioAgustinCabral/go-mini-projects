@@ -8,7 +8,7 @@ import (
 
 func main() {
 	randomNumber := rand.IntN(100) + 1
-
+	counter := 0
 	fmt.Println("Try to guess the number between 1 and 100!")
 	for {
 		var input string
@@ -25,9 +25,12 @@ func main() {
 			fmt.Println("Entered number must be between 1 and 100")
 			continue
 		}
+		
+		counter++
 
 		if guessedNumber == randomNumber {
-			fmt.Printf("You've guessed the number correctly!. It was %v\n", randomNumber)
+			fmt.Printf("You've guessed the number correctly!.It was %v\n", randomNumber)
+			fmt.Printf("It took you %v tries\n", counter)
 			break
 		}
 		diff := absoluteDiff(guessedNumber, randomNumber)
