@@ -12,7 +12,7 @@ func main() {
 	flag.Parse()
 
 	switch *project {
-	case "calculator":
+	case "guess-number":
 		runProject("guess-number")
 	default:
 		fmt.Println("Invalid project")
