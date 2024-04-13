@@ -1,21 +1,26 @@
 package main
 
 import (
-	"flag"
 	"fmt"
 	"os"
 	"os/exec"
 )
 
 func main() {
-	project := flag.String("project", "", "Project to run (guess-number, unit-converter, qr-generator, etc.)")
-	flag.Parse()
+	fmt.Println("Welcome to go mini-projects")
+	fmt.Println("Please type guess-number, unit-converter or qr-generator to access a project")
 
-	switch *project {
-	case "guess-number":
-		runProject("guess-number")
-	default:
-		fmt.Println("Invalid project")
+	for {
+		var project string
+		fmt.Scanln(&project)
+
+		if project != "guess-number" && project != "unit-converter" && project != "qr-generator" {
+			fmt.Println("Please enter a valid project")
+			continue
+		} else {
+			runProject(project)
+			break
+		}
 	}
 }
 
